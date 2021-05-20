@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                <h2 class="blog-post-title">CERTIFICADOS</h2>
+                <br>
+                {% if object_list %}
+                    {% for cert in certificadosview.all %}
+                        <div class="panel panel-default row">
+                            <div class="panel-body-cer">
+                                <div class="col-sm-7 panel-body-marin-col1">
+                                    <p style="padding-bottom: 0px; margin-bottom: 0px;">{{ cert.formacion }}</p>
+                                    <p>{{ cert.mes_final }} {{ cert.ahno_final }}</p>
+                                </div>
+                                <div class="col-sm-5 panel-body-marin-col2">
+                                    <div class="container-but">
+                                        <div class = "center-but">
+                                            <a href="{{ cert.url_certificado }}" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Ver Certificado</a>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="panel-footer" style="background: #3B3B3B; color: #FFFFFF"><p>{{ cert.instituto }}</p></div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <nav>
+                <ul class="pager">
+                    <li><a href="{% url 'formesp' %}">Previo</a></li>
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                </ul>
+                </nav>
+            
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+{% endblock %}

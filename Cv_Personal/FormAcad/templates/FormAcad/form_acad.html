@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                <h2 class="blog-post-title">FORMACIÓN ACADEMICA</h2>
+                <br>
+
+                    {% if object_list %}
+                        {% for formacad in formacadview.all %}
+                            <div class="panel panel-default row">
+                                <div class="panel-body">
+                                    <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                                        <p style="padding-bottom: 0px; margin-bottom: 0px;">{{ formacad.formacion }}</p>
+                                        <p>{{ formacad.fecha_inicio }} - {{ formacad.fecha_final }}</p>
+                                    </div>
+                                    <div class="col-sm-5 panel-body-marin-col2">
+                                        {% comment %} <div class="container-but">
+                                            <div class = "center-but">
+                                                <button class="btn btn-primary btn-lg btn-block">Ver Certificado</button>
+                                            </div>
+                                        </div> {% endcomment %}
+                                    </div>
+                                </div>
+                                <div class="panel-footer"><p>{{ formacad.instituto }}</p></div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+            
+                <nav>
+                <ul class="pager">
+                    <li><a href="{% url 'experience' %}">Previo</a></li>
+                    <li><a href="{% url 'formesp' %}">Siguiente</a></li>
+                </ul>
+                </nav>
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+
+{% endblock  %}

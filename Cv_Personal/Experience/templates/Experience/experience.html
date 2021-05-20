@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                <h2 class="blog-post-title">EXPERIENCIA</h2>
+                <br>
+
+                {% if object_list %}
+                    {% for exper in experienceview.all %}
+                                <div class="col-sm-12 col-md-4 nopadding">
+                                    <div class="custom-column">
+                                        <div class="custom-column-header"><p>{{ exper.start_date|date:'M Y' }} -   {% if exper.end_date_view == 'Actualidad' %}
+                                                                                                                    {{ exper.end_date_view }}
+                                                                                                                {% else %}
+                                                                                                                    {{ exper.end_date_view|date:'M Y' }}
+                                                                                                                {% endif %}</p>
+                                        
+                                        
+                                        </div>
+                                        <div class="custom-column-content">
+                                            <ul class="list-group">
+                                                {% comment %} <li class="list-group-item"><i class="fa fa-check"></i> Cras justo odio</li> {% endcomment %}
+                                                <li class="list-group-item" style="font-size:16px"> 
+                                                
+                                                    <i class="material-icons" style="font-size:14px" >work</i>
+                                                    {{ exper.empleador }}
+                                                    
+                                                </li>
+
+                                                <li class="list-group-item" style="font-size:14px">
+                                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true" style="font-size:14px" ></span>
+                                                    {{ exper.age_in_months }}
+                                                </li>
+
+                                                <li class="list-group-item" style="font-size:14px;"> 
+                                                    
+                                                    <span class="glyphicon glyphicon-console" aria-hidden="true" style="font-size:14px" ></span>
+                                                    {{ exper.resumen }}
+                                                    
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        {% comment %} <div class="custom-column-footer"><button class="btn btn-primary btn-lg">Click here</button></div> {% endcomment %}
+                                    </div>
+                                </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="pagination"> 
+                <nav>
+                <ul class="pager">
+                    <li><a href="{% url 'habilidades' %}">Previo</a></li>
+                    <li><a href="{% url 'formacad' %}">Siguiente</a></li>
+                </ul>
+                </nav>
+                </div>
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+
+
+{% endblock  %}

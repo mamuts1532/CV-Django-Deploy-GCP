@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <div class="container">
+
+    {% comment %} <div class = "cv-header">
+        <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center">      
+    </div>
+    <div class = "center">
+        <h3>Jorge Ivan Guevara Pérez</h3>
+        <h4>Consultor TI</h4>
+    </div> {% endcomment %}
+
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">PRESENTACIÓN</h2>
+            <p class="blog-post-meta">{% now "j F Y g:i a" %}</p>
+
+
+
+            <p align="justify">Consultor e investigador de tecnología con experiencia en gestión de recursos en la nube 
+            usando plataforma como Google Cloud Platform y Azure, manejo de infraestructura de tecnología para proyectos 
+            de ciencia y minería de datos. Habilidades para carga, almacenaje y manipulación de datos en herramientas 
+            como Hadoop (Cloudera) y Bases de datos relacionales y no relacionales. 
+            <br>
+            <blockquote>
+              <p>Gestión de recursos en la nube usando plataformas como <strong>Google Cloud Platform</strong> y <strong>Azure</strong>.</p>
+            </blockquote>
+          
+            <p align="justify">Analista enfocado en la extracción, limpieza, manipulación y visualización de datos para la 
+            ejecución de técnicas cómo machine learning, clustering, minería de datos, análisis de texto, 
+            visualización y rastreo web con Python. Desarrollador Full Stack con frameworks de Python para el desarrollo 
+            de aplicaciones.
+            <br>
+            <blockquote>
+              <p>Desarrollador Full Stack con frameworks de <strong>Python</strong> para el desarrollo de aplicaciones.</p>
+            </blockquote>
+            <p align="justify">Responsable, autónomo y muy meticuloso. Altamente comprometido con el cumplimiento del deber y los valores. 
+            Como independiente he desempeñado cargos en gerencia y administración de empresas del sector comercial y 
+            financiero, relacionado con corresponsal bancario y compra/venta profesional de divisas, he recibido capacitación 
+            para el cumplimiento del SARLAFT y la creación y manejo de informes para reportes a la UIAF
+            .</p>
+            <hr>
+
+
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">DATOS PERSONALES</h2>
+
+            <p style="text-align:left; font-size:16px;"><strong>Fecha y Lugar de Nacimiento:</strong> <span style="float:right;">24 de Noviembre de 1984, Bucaramanga Santander</span></p>
+            {% comment %} <p style="text-align:left; font-size:16px;"><strong>Documento De Identidad:</strong> <span style="float:right;">C.C. XXXXXXXXXXX</span></p> {% endcomment %}
+            <p style="text-align:left; font-size:16px;"><strong>Tarjeta Profesional:</strong> <span style="float:right;">No. NS290-63296</span></p>
+          </div><!-- /.blog-post -->
+
+        <nav>
+          <ul class="pager">
+            <li><a href="#">Previo</a></li>
+            <li><a href="{% url 'habilidades' %}">Siguiente</a></li>
+          </ul>
+        </nav>
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        
+        {% comment %} <div class = "cv-header-sidebar">
+            <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center-sidebar">      
+        </div>
+        <div class = "center">
+            <h4>Jorge Ivan Guevara Pérez</h4>
+            <h5>Consultor TI</h5>
+        </div> {% endcomment %}
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+    </div>
+
+
+{% endblock %}

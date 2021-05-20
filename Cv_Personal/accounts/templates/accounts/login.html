@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main login-header-sidebar">
+                    <h1>Log In</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <input class ="btn btn-default" type="submit" value="Log In">
+                    </form>
+            
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+                <div class = "cv-header-sidebar">
+                    <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center-sidebar">      
+                </div>
+                <div class = "center">
+                    <h4>Jorge Ivan Guevara Pérez</h4>
+                    <h5>Consultor TI</h5>
+                </div>
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+
+{% endblock  %}

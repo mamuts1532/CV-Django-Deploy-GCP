@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    {% comment %} <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> {% endcomment %}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'Cv_Personal/css/master.css' %}">
+
+
+</head>
+<body class = "header-body">
+
+    {% comment %} <nav class = 'navbar mynav' role = 'navigation' id = 'navbar'>
+        <div class="container">
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <li><a href="">Post</a></li>
+                    <li><a href="">Groups</a></li>
+                    <li><a href="">Create Group</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+                {% else %}
+                    <li><a href="">Groups</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                {% endif %}
+
+            </ul>
+
+        </div>
+
+    </nav> {% endcomment %}
+
+    <!-- DOCUMENTATION NAVBAR -->
+
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top mynav ">
+
+      <!-- Inside of a Container -->
+    <div class="container">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <!-- This is the actual code that create the "hamburger icon" -->
+      <!-- The data-target grabs ids to put into the icon -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
+          <!--  Code for the hamburger icon-->
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'home' %}">Jorge Guevara</a>
+      </div>
+
+      <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li><a href="">Post</a></li>
+                <li><a href="https://github.com/mamuts1532">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/jorge-ivan-guevara-perez/">LinkedIn</a></li>
+                <!-- Use this to separate a new link -->
+                <li role="separator" class="divider"></li>
+                <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+            {% else %}
+                {% comment %} <li><a href="">Groups</a></li> {% endcomment %}
+                <li><a href="https://www.linkedin.com/in/jorge-ivan-guevara-perez/">LinkedIn</a></li>
+                <!-- Use this to separate a new link -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GitHub <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://github.com/jorge-datanalyst">Corporativo</a></li>
+
+                    <!-- Use this to separate a new link -->
+
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://github.com/mamuts1532">Personal</a></li>
+                  </ul>
+                </li>
+                {% comment %} <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li> {% endcomment %}
+            {% endif %}
+
+        </ul>        
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+
+
+
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+      </div><!-- /.blog-main -->
+          <div class = "cv-header-sidebar">
+              <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center-sidebar">      
+          </div>
+          <div class = "center">
+              <h4>Jorge Ivan Guevara Pérez</h4>
+              <h5>Consultor TI</h5>
+          </div>
+
+
+      <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="sidebar-module sidebar-module-inset">
+          <h4>Acerca de mí</h4>
+          <p>Padre de familia, esposo, emprendedor, autónomo, disciplinado, responsable y comprometido.</p>
+        </div>
+        <div class="sidebar-module">
+          <h4>Enlaces</h4>
+          <ol class="list-unstyled">
+            <li><a href="/habilidades">Habilidades</a></li>
+            <li><a href="/experience">Experiencia</a></li>
+            <li><a href="/formacad">Formacion Academica</a></li>
+            <li><a href="/formesp">Formacion Especializada</a></li>
+            <li><a href="/certificados">Certificados</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-module">
+          <h4>Sígueme</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/jorge-datanalyst">GitHub Corporativo</a></li>
+            <li><a href="https://github.com/mamuts1532">GitHub Personal</a></li>
+            <li><a href="https://www.linkedin.com/in/jorge-ivan-guevara-perez/">LinkedIn</a></li>
+          </ol>
+        </div>
+      </div><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+  </div><!-- /.container -->
+
+
+
+
+
+  <footer class="blog-footer" style="background-color: #212121">
+    <p>Copyright @ Jorge Guevara 2021</p>
+    <p>
+      <a href="#">Volver al inicio</a>
+    </p>
+  </footer>
+
+  <!-- Need to have JQuery and Javascript for DropDown Actions to work -->
+
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

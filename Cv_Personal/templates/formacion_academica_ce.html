@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                <h2 class="blog-post-title">PROGRAMAS ESPECIALIZADOS</h2>
+                <br>
+                
+                <div class="panel panel-default row">
+                    <div class="panel-body">
+                        <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                            <p style="padding-bottom: 0px; margin-bottom: 0px;">Developing Applications with Google Cloud Platform</p>
+                            <p>Mayo 2020</p>
+                        </div>
+                        <div class="col-sm-5 panel-body-marin-col2">
+                            <div class="container-but">
+                                <div class = "center-but">
+                                    <a href="https://www.coursera.org/account/accomplishments/specialization/8FEGX3TU4CGW" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Ver Certificado</a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="panel-footer"><p>GOOGLE CLOUD</p></div>
+                </div>
+
+                <div class="panel panel-default row">
+                    <div class="panel-body">
+                        <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                            <p style="padding-bottom: 0px; margin-bottom: 0px;">Python for Everybody, especialización de 5 cursos</p>
+                            <p>Mayo 2019</p>
+                        </div>
+                        <div class="col-sm-5 panel-body-marin-col2">
+                            <div class="container-but">
+                                <div class = "center-but">
+                                    <a href="https://www.coursera.org/account/accomplishments/specialization/LK8HG6FTAYVW" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Ver Certificado</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer"><p>UNIVERSITY OF MICHIGAN - COURSERA</p></div>
+                </div>
+
+                <div class="panel panel-default row">
+                    <div class="panel-body">
+                        <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                            <p style="padding-bottom: 0px; margin-bottom: 0px;">Python and Django Full Stack Web Developer Bootcamp </p>
+                            <p>Febrero 2021</p>
+                        </div>
+                        <div class="col-sm-5 panel-body-marin-col2">
+                            <div class="container-but">
+                                <div class = "center-but">
+                                    <a href="https://www.udemy.com/certificate/UC-6afcfd3e-9d0c-475e-a864-d8b6dfff1521/" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Ver Certificado</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer"><p>UDEMY</p></div>
+                </div>
+
+                <nav>
+                <ul class="pager">
+                    <li><a href="{% url 'formacad' %}">Previo</a></li>
+                    <li><a href="{% url 'formacion_academica_ct' %}">Siguiente</a></li>
+                </ul>
+                </nav>
+            
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+                {% comment %} <div class = "cv-header-sidebar">
+                    <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center-sidebar">      
+                </div>
+                <div class = "center">
+                    <h4>Jorge Ivan Guevara Pérez</h4>
+                    <h5>Consultor TI</h5>
+                </div> {% endcomment %}
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+{% endblock %}

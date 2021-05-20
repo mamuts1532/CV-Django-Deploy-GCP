@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                <h2 class="blog-post-title">HABILIDADES</h2>
+                <br>
+
+                {% comment %} FILA 2 {% endcomment %}
+
+                {% if object_list %}
+                 <ol>
+                    {% for skillv in skillview.all %}
+                        <div class = "col-md-5">
+                            <div class="chart-container">
+                                <p style="text-align: center;"><b><u>{{ skillv.skill }}</u></b></p>
+                                <canvas id="{{ skillv.skill }}"></canvas>
+                            </div>
+                        </div>
+                        <script>
+                            var ctx = document.getElementById('{{ skillv.skill }}').getContext('2d');
+                            var {{ skillv.skill }} = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: {
+                                    labels:[
+                                            '% Dominio',
+                                            '% Impericia',
+                                    ],
+                                    datasets: [{
+                                            label: 'My First Dataset',
+                                            data: [{{ skillv.measure }}, 100-{{ skillv.measure }}],
+                                            backgroundColor: [
+                                            'rgb(6, 69, 58)',
+                                            'rgb(206, 212, 218)'
+                                            ],
+                                        hoverOffset: 4
+                                    }]
+                                },
+                            });
+                        </script>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+            
+                    <nav >
+                    <ul class="pager">
+                        <li><a href="{% url 'home' %}">Previo</a></li>
+                        <li><a href="{% url 'experience' %}">Siguiente</a></li>
+                    </ul>
+                    </nav>
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+                {% comment %} <div class = "cv-header-sidebar">
+                    <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center-sidebar">      
+                </div>
+                <div class = "center">
+                    <h4>Jorge Ivan Guevara Pérez</h4>
+                    <h5>Consultor TI</h5>
+                </div> {% endcomment %}
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+
+{% endblock  %}

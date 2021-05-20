@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+
+                <h2 class="blog-post-title">FORMACIÓN ACADEMICA</h2>
+                <br>
+
+                <div class="panel panel-default row">
+                    <div class="panel-body">
+                        <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                            <p style="padding-bottom: 0px; margin-bottom: 0px;">Maestría en Ingeniería y Analítica de Datos</p>
+                            <p>2018 - 2021</p>
+                        </div>
+                        <div class="col-sm-5 panel-body-marin-col2">
+                            {% comment %} <div class="container-but">
+                                <div class = "center-but">
+                                    <button class="btn btn-primary btn-lg btn-block">Ver Certificado</button>
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="panel-footer"><p>Universidad de Bogotá Jorge Tadeo Lozano</p></div>
+                </div>
+
+                <div class="panel panel-default row">
+                    <div class="panel-body">
+                        <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                            <p style="padding-bottom: 0px; margin-bottom: 0px;">Ingeniero en Telecomunicaciones</p>
+                            <p>2003 - 2009</p>
+                        </div>
+                        <div class="col-sm-5 panel-body-marin-col2">
+                            {% comment %} <div class="container-but">
+                                <div class = "center-but">
+                                    <button class="btn btn-primary btn-lg btn-block">Ver Certificado</button>
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="panel-footer"><p>Universidad de Pamplona - Colombia</p></div>
+                </div>
+                
+                <div class="panel panel-default row">
+                    <div class="panel-body">
+                        <div class="col-sm-7 panel-body-marin-col1" style = "color: #FFFFFF">
+                            <p style="padding-bottom: 0px; margin-bottom: 0px;">Bachiller técnico, énfasis en dibujo técnico</p>
+                            <p>1997 - 2002</p>
+                        </div>
+                        <div class="col-sm-5 panel-body-marin-col2">
+                            {% comment %} <div class="container-but">
+                                <div class = "center-but">
+                                    <button class="btn btn-primary btn-lg btn-block">Ver Certificado</button>
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="panel-footer"><p>Instituto Técnico Industrial Laureano Gómez Castro</p></div>
+                </div>
+
+                <nav>
+                <ul class="pager">
+                    <li><a href="{% url 'experiencia' %}">Previo</a></li>
+                    <li><a href="{% url 'formacion_academica_ce' %}">Siguiente</a></li>
+                </ul>
+                </nav>
+            
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+                {% comment %} <div class = "cv-header-sidebar">
+                    <img src="/media/jorge_guevara.jpg" alt="Jorge Guevara" class = "image-center-sidebar">      
+                </div>
+                <div class = "center">
+                    <h4>Jorge Ivan Guevara Pérez</h4>
+                    <h5>Consultor TI</h5>
+                </div> {% endcomment %}
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+{% endblock %}
