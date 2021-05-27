@@ -9,7 +9,7 @@ handlers:
 - url: /media
   static_dir: media/
   
-- url: .*
+- url: /.*
   script: main.app
 
 # This handler routes all requests not caught above to your main app. It is
