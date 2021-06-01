@@ -195,5 +195,3 @@ STATIC_ROOT = 'static'
 #MEDIA_ROOT  = Path.joinpath(BASE_DIR, 'media')
 MEDIA_URL = 'https://storage.googleapis.com/cv-django-bucket/media/'
 
-LOGIN_REDIRECT_URL = 'test'
-LOGOUT_REDIRECT_URL = 'thanks'
