@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'FormAcad',
     'FormEsp',
     'Certificados',
-    'Experience'
+    'Experience',
+    'actividad_adicional'
 ]
 
 MIDDLEWARE = [
